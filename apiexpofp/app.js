@@ -6,6 +6,7 @@ const logger =  require('morgan'); // Para realizar el logging de la aplicación
 const mongoose = require('mongoose');
 const auth = require('./middlewares/auth');
 const config = require('./config');
+const cors = require('cors');
 
 
 /*
