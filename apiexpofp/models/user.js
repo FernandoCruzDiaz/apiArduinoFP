@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt-nodejs');
 const crypto = require('crypto');
 
 const userSchema = new Schema({
-
     email: {type: String, unique: true, lowercase: true},
     nombre: String,
     apellidos: String,
@@ -13,8 +12,6 @@ const userSchema = new Schema({
     num_personas: Number,
     direccion: String,
     limite_consumo: Number
-
-
 });
 
 userSchema.pre('save', function (next) {
