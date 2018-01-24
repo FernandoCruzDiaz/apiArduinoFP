@@ -9,10 +9,10 @@ const config = require('./config');
 const cors = require('cors');
 
 
-/*
+
 mongoose.connect(config.MONGODB_URI,
     { useMongoClient: true });
-*/
+
 mongoose.Promise = global.Promise; //para la creacion de peticiones
 
 
