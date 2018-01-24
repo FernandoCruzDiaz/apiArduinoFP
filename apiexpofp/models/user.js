@@ -10,7 +10,10 @@ const userSchema = new Schema({
     nombre: String,
     apellidos: String,
     password: {type: String, select: false},
-    idPlaca: String
+    num_personas: Number,
+    direccion: String,
+    limite_consumo: Number
+
 
 });
 

@@ -1,5 +1,3 @@
-
-
 const service = require('../services');
 
 module.exports.isAuth = (req, res, next) => {
