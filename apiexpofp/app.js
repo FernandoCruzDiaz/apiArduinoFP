@@ -23,7 +23,7 @@ let app = express();
 app.use(logger('dev')); // Para "inicializar" el logging
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser())
+app.use(cookieParser());
 
 app.use('/api/v1/users', users);
 
