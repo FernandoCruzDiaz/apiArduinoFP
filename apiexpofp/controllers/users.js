@@ -52,7 +52,11 @@ module.exports.signIn = (req, res) => {
                     res.status(200).jsonp({
                         token: service.createToken(user),
                         nombre: result.nombre,
-                        email: result.email
+                        email: result.email,
+                        apellidos: result.apellidos,
+                        direccion: result.direccion,
+                        limite_consumo: result.limite_consumo,
+                        num_personas: result.num_personas
                     });
                 }
             });
