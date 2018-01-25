@@ -62,28 +62,35 @@ module.exports.signIn = (req, res) => {
 // PUT Cambiar configuración
 module.exports.cambiarConfig = (req, res) => {
 
-    User.findOne(req.body.email, function (err, usuario) {
+    User.findOne({'_id': req.user}, (err, usuario) => {
+        if(err){
+            return res
+                .status(500)
+                .jsonp({
+                    error: 500,
+                    mensaje: 'No existe ese usuario'
+                });
+        }
         if(req.body.num_personas != null)
             usuario.num_personas = req.body.num_personas;
         if(req.body.direccion != null)
             usuario.direccion = req.body.direccion;
         if(req.body.limite_consumo != null)
             usuario.limite_consumo = req.body.limite_consumo;
-    });
 
-    usuario.save((err) => {
-      if (err)
-          return res.status(500).jsonp({
-              error: 500,
-              mensaje: `${err.message}`
-          });
-      res.status(200).jsonp({
-          email: res.email,
-          num_personas: res.num_personas,
-          direccion: res.direccion,
-          limite_consumo: res.limite_consumo
-      });
-    })
+        usuario.save((err) => {
+          if (err)
+              return res.status(500).jsonp({
+                  error: 500,
+                  mensaje: `${err.message}`
+              });
+          res.status(200).jsonp({
+              direccion: usuario.direccion,
+              num_personas: usuario.num_personas,
+              limite_consumo: usuario.limite_consumo
+        });
+        })
+    });
 };
 
 // GET User
