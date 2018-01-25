@@ -88,14 +88,21 @@ module.exports.cambiarConfig = (req, res) => {
 
 // GET User
 module.exports.getUser = (req, res) =>  {
-    User.find({_id: req.user}, (err, usuario) => {
+    User.findOne({'_id': req.user}, (err, usuario) => {
         if (err)
             return res
                 .status(500)
                 .jsonp({
                     error: 500,
-                    mensaje: 'No existe un usuario con ese ID'
+                    mensaje: 'No existe ese usuario'
                 });
-        res.status(200).jsonp(usuario)
+        res.status(200).jsonp({
+            email: usuario.email,
+            nombre: usuario.nombre,
+            apellidos: usuario.apellidos,
+            direccion: usuario.direccion,
+            num_personas: usuario.num_personas,
+            limite_consumo: usuario.limite_consumo
+        })
     });
 };
