@@ -48,15 +48,15 @@ module.exports.signIn = (req, res) => {
                 if (result === false)
                     return res.status(401).jsonp({error: 401, mensaje: 'Error en la autenticación'});
                 else {
-                    //TODO Posiblemente la tengamos que revisar
+                    req.user = user;
                     res.status(200).jsonp({
                         token: service.createToken(user),
-                        nombre: result.nombre,
-                        email: result.email,
-                        apellidos: result.apellidos,
-                        direccion: result.direccion,
-                        limite_consumo: result.limite_consumo,
-                        num_personas: result.num_personas
+                        nombre: user.nombre,
+                        email: user.email,
+                        apellidos: user.apellidos,
+                        direccion: user.direccion,
+                        limite_consumo: user.limite_consumo,
+                        num_personas: user.num_personas
                     });
                 }
             });
