@@ -8,14 +8,12 @@ module.exports.nuevoDato = (req, res) => {
         consumo: req.body.consumo
     });
 
-    usuario.save((err, result) => {
+    dato.save((err, result) => {
         if(err)
             return res.status(500).jsonp({error: 500, mensaje: `${err.mensaje}`});
-
 
         return res.status(201).jsonp({
             consumo: result.consumo
         });
     });
-
 };
