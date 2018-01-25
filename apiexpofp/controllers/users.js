@@ -32,7 +32,7 @@ module.exports.registroUsuario = (req, res) => {
 
 };
 
-// POST login
+// POST Login
 module.exports.signIn = (req, res) => {
 
     User
@@ -84,4 +84,18 @@ module.exports.cambiarConfig = (req, res) => {
           limite_consumo: res.limite_consumo
       });
     })
+};
+
+// GET User
+module.exports.getUser = (req, res) =>  {
+    User.find({_id: req.user}, (err, usuario) => {
+        if (err)
+            return res
+                .status(500)
+                .jsonp({
+                    error: 500,
+                    mensaje: 'No existe un usuario con ese ID'
+                });
+        res.status(200).jsonp(usuario)
+    });
 };
