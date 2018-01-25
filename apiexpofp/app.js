@@ -7,8 +7,6 @@ const mongoose = require('mongoose');
 const auth = require('./middlewares/auth');
 const config = require('./config');
 
-
-
 mongoose.connect(config.MONGODB_URI,
     { useMongoClient: true });
 

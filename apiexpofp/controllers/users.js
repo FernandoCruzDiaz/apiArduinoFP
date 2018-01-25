@@ -45,18 +45,43 @@ module.exports.signIn = (req, res) => {
 
             bcrypt.compare(req.body.password, user.password, (err, result) => {
                 if (err) return res.status(401).jsonp({error: 401, mensaje: 'Error en la autenticación'});
-                if (result == false)
+                if (result === false)
                     return res.status(401).jsonp({error: 401, mensaje: 'Error en la autenticación'});
                 else {
                     //TODO Posiblemente la tengamos que revisar
-                    req.user = user;
                     res.status(200).jsonp({
-                        mensaje: 'Login correcto',
-                        token: service.createToken(user)
+                        token: service.createToken(user),
+                        nombre: result.nombre,
+                        email: result.email
                     });
                 }
             });
-
         });
+};
 
+// PUT Cambiar configuración
+module.exports.cambiarConfig = (req, res) => {
+
+    User.findOne(req.body.email, function (err, usuario) {
+        if(req.body.num_personas != null)
+            usuario.num_personas = req.body.num_personas;
+        if(req.body.direccion != null)
+            usuario.direccion = req.body.direccion;
+        if(req.body.limite_consumo != null)
+            usuario.limite_consumo = req.body.limite_consumo;
+    });
+
+    usuario.save((err) => {
+      if (err)
+          return res.status(500).jsonp({
+              error: 500,
+              mensaje: `${err.message}`
+          });
+      res.status(200).jsonp({
+          email: res.email,
+          num_personas: res.num_personas,
+          direccion: res.direccion,
+          limite_consumo: res.limite_consumo
+      });
+    })
 };

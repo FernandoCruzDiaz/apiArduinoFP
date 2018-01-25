@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const consumo = new Schema({
-    id_placa: {type: String, unique: true},
+    id_placa: String,
     consumo: Number
 });
 
