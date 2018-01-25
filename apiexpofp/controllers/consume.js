@@ -1,4 +1,4 @@
-const Consumo = require('./models/consume');
+const Consumo = require('../models/consume');
 
 // POST Nuevo dato de consumo
 module.exports.nuevoDato = (req, res) => {
