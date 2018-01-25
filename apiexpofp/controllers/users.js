@@ -37,7 +37,7 @@ module.exports.signIn = (req, res) => {
 
     User
         .findOne({email: req.body.email})
-        .select('_id email +password ')
+        .select('_id email +password nombre apellidos direccion num_personas limite_consumo')
         .exec((err, user) => {
 
             if (err) return res.status(401).jsonp({error: 401, mensaje: 'Error en la autenticación'});
