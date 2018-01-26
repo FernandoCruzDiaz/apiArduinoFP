@@ -45,7 +45,7 @@ module.exports.signIn = (req, res) => {
 
             bcrypt.compare(req.body.password, user.password, (err, result) => {
                 if (err) return res.status(401).jsonp({error: 401, mensaje: 'Error en la autenticación'});
-                if (result === false)
+                if (!result)
                     return res.status(401).jsonp({error: 401, mensaje: 'Error en la autenticación'});
                 else {
                     req.user = user;
@@ -75,11 +75,11 @@ module.exports.cambiarConfig = (req, res) => {
                     mensaje: 'No existe ese usuario'
                 });
         }
-        if(req.body.num_personas != null)
+        if(req.body.num_personas)
             usuario.num_personas = req.body.num_personas;
-        if(req.body.direccion != null)
+        if(req.body.direccion)
             usuario.direccion = req.body.direccion;
-        if(req.body.limite_consumo != null)
+        if(req.body.limite_consumo)
             usuario.limite_consumo = req.body.limite_consumo;
 
         usuario.save((err) => {
