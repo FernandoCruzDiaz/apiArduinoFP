@@ -5,7 +5,9 @@ module.exports.nuevoDato = (req, res) => {
 
     let dato = new Consumo({
         id_placa: req.body.id_placa,
-        consumo: req.body.consumo
+        consumo: req.body.consumo,
+        fecha_Inicio: req.body.fecha_Inicio,
+        fecha_Fin: req.body.fecha_Fin
     });
 
     dato.save((err, result) => {
