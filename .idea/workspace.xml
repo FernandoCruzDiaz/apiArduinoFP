@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56ca9639-3271-450f-a70a-8888db987eee" name="Default" comment="Subida refactorizada de las clases modelos">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apiexpofp/models/placa.js" />
+    <list default="true" id="56ca9639-3271-450f-a70a-8888db987eee" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apiexpofp/models/arduinoPlaca.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apiexpofp/controllers/users.js" afterPath="$PROJECT_DIR$/apiexpofp/controllers/users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apiexpofp/models/consume.js" afterPath="$PROJECT_DIR$/apiexpofp/models/consume.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apiexpofp/package-lock.json" afterPath="$PROJECT_DIR$/apiexpofp/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apiexpofp/package.json" afterPath="$PROJECT_DIR$/apiexpofp/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,6 +17,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="placa.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apiexpofp/models/placa.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apiexpofp/controllers/users.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,7 +67,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="consume.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="consume.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apiexpofp/models/consume.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -71,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="placa.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apiexpofp/models/placa.js">
+      <file leaf-file-name="arduinoPlaca.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apiexpofp/models/arduinoPlaca.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -100,6 +106,7 @@
         <option value="$PROJECT_DIR$/apiexpofp/models/placa.js" />
         <option value="$PROJECT_DIR$/apiexpofp/controllers/users.js" />
         <option value="$PROJECT_DIR$/apiexpofp/models/consume.js" />
+        <option value="$PROJECT_DIR$/apiexpofp/models/arduinoPlaca.js" />
       </list>
     </option>
   </component>
@@ -201,12 +208,20 @@
       <option name="presentableId" value="Default" />
       <updated>1516911703353</updated>
       <workItem from="1516911704850" duration="288000" />
-      <workItem from="1516963503825" duration="1921000" />
+      <workItem from="1516963503825" duration="2907000" />
     </task>
+    <task id="LOCAL-00001" summary="Subida refactorizada de las clases modelos">
+      <created>1516965454858</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1516965454858</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2209000" />
+    <option name="totallyTimeSpent" value="3195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -309,14 +324,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apiexpofp/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="37" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apiexpofp/controllers/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-357">
@@ -325,10 +332,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apiexpofp/models/placa.js">
+    <entry file="file://$PROJECT_DIR$/apiexpofp/models/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="697">
+          <caret line="41" column="37" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -337,6 +344,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apiexpofp/models/placa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apiexpofp/models/arduinoPlaca.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding />
         </state>
       </provider>
