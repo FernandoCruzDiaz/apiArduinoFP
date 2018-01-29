@@ -6,7 +6,6 @@ const consumo = new Schema({
     consumo: Number,
     fecha_Inicio: {type: Date},
     fecha_Fin: {type: Date}
-
 });
 
 module.exports = mongoose.model('Consume', consumo);

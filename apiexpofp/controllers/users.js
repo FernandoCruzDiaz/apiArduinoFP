@@ -101,9 +101,7 @@ module.exports.cambiarConfig = (req, res) => {
 module.exports.getUser = (req, res) =>  {
     User.findOne({'_id': req.user}, (err, usuario) => {
         if (err)
-            return res
-                .status(500)
-                .jsonp({
+            return res.status(500).jsonp({
                     error: 500,
                     mensaje: 'No existe ese usuario'
                 });

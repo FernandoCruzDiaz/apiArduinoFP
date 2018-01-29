@@ -1,4 +1,5 @@
 const Consumo = require('../models/consume');
+const Usuario = require('../models/user');
 
 // POST Nuevo dato de consumo
 module.exports.nuevoDato = (req, res) => {
@@ -18,4 +19,25 @@ module.exports.nuevoDato = (req, res) => {
             consumo: result.consumo
         });
     });
+};
+
+module.exports.consumo = (req, res) => {
+
+    Usuario.findOne({'_id': req.user}, (err, usuario) => {
+        if (err) return res.status(500)
+                .jsonp({
+                    error: 500,
+                    mensaje: 'No existe ese usuario'
+                });
+        Consumo.find((err, consumo) => {
+            if (err) return res.status(500).jsonp({
+                error: 500,
+                mensaje: `${err.message}`
+            });
+
+            res.status(200).jsonp(consumo);
+
+        })
+    });
+
 };
