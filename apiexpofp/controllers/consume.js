@@ -12,8 +12,8 @@ module.exports.nuevoDato = (req, res) => {
     let dato = new Consumo({
         id_placa: mongoose.Types.ObjectId(placa._id),
         consumo: req.body.consumo,
-        fecha_Inicio: Date.now(),//req.body.fecha_Inicio,
-        fecha_Fin: Date.now()//req.body.fecha_Fin
+        fecha_Inicio: Date.now(), //TODO //req.body.fecha_Inicio,
+        fecha_Fin: Date.now() //TODO //req.body.fecha_Fin
     });
 
     dato.save((err, result) => {
