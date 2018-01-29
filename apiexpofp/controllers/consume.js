@@ -1,14 +1,19 @@
 const Consumo = require('../models/consume');
 const Usuario = require('../models/user');
+const Placa = require('../models/placa');
+const mongoose = require('mongoose');
 
 // POST Nuevo dato de consumo
 module.exports.nuevoDato = (req, res) => {
 
+    Placa.findOne({id_placa: req.body.id_placa}, (err, placa) => {
+        if (err) return res.status(404).jsonp({error: 404, mensaje: 'No existe una Placa con ese UUID'});
+
     let dato = new Consumo({
-        id_placa: req.body.id_placa,
+        id_placa: mongoose.Types.ObjectId(placa._id),
         consumo: req.body.consumo,
-        fecha_Inicio: req.body.fecha_Inicio,
-        fecha_Fin: req.body.fecha_Fin
+        fecha_Inicio: Date.now(),//req.body.fecha_Inicio,
+        fecha_Fin: Date.now()//req.body.fecha_Fin
     });
 
     dato.save((err, result) => {
@@ -19,25 +24,21 @@ module.exports.nuevoDato = (req, res) => {
             consumo: result.consumo
         });
     });
+    });
 };
 
 module.exports.consumo = (req, res) => {
 
-    Usuario.findOne({'_id': req.user}, (err, usuario) => {
-        if (err) return res.status(500)
-                .jsonp({
-                    error: 500,
-                    mensaje: 'No existe ese usuario'
-                });
-        Consumo.find((err, consumo) => {
+    Placa.findOne({id_placa: req.body.id_placa}, (err, placa) => {
+        if (err) return res.status(404).jsonp({error: 404, mensaje: 'No existe una Placa con ese UUID'});
+
+        Consumo.find({id_placa: placa}).select('consumo fecha_Inicio fecha_Fin -_id').exec((err, consumo) => {
             if (err) return res.status(500).jsonp({
                 error: 500,
                 mensaje: `${err.message}`
             });
-
             res.status(200).jsonp(consumo);
-
-        })
+        });
     });
 
 };

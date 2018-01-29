@@ -4,6 +4,6 @@ let router = express.Router();
 const auth = require('../middlewares/auth');
 
 router.post('/', consumeController.nuevoDato);
-router.get('/consumo', auth.isAuth, consumeController.consumo);
+router.post('/consumo', auth.isAuth, consumeController.consumo);
 
 module.exports = router;
