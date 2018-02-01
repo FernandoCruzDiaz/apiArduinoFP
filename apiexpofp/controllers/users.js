@@ -10,7 +10,8 @@ module.exports.registroUsuario = (req, res) => {
         apellidos: req.body.apellidos,
         email: req.body.email,
         password: req.body.password,
-        direccion: req.body.direccion
+        direccion: req.body.direccion,
+        num_personas: req.body.num_personas
     });
 
     user.save((err, result) => {
@@ -81,6 +82,8 @@ module.exports.cambiarConfig = (req, res) => {
             usuario.direccion = req.body.direccion;
         if(req.body.limite_consumo)
             usuario.limite_consumo = req.body.limite_consumo;
+        if(req.body.password)
+            usuario.password = req.body.password;
 
         usuario.save((err) => {
           if (err)
