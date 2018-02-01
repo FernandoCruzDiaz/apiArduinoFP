@@ -11,7 +11,8 @@ module.exports.registroUsuario = (req, res) => {
         email: req.body.email,
         password: req.body.password,
         direccion: req.body.direccion,
-        num_personas: req.body.num_personas
+        num_personas: req.body.num_personas,
+        limite_consumo: req.body.limite_consumo
     });
 
     user.save((err, result) => {
